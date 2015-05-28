@@ -9,23 +9,84 @@ body {
     transform: translateX(0); }
   to {
     transform: translate(200%); } }
-.flash-card {
-  transition: all 2s ease-in-out;
-  background: #6A2E35;
+.button-nav {
+  margin-top: 3%;
+  text-align: center; }
+  .button-nav button {
+    background-color: #c2bfbf;
+    padding: 12px;
+    border-radius: 14%;
+    margin: 4px;
+    font-weight: bold; }
+
+#stats {
+  color: #ebe2e2; }
+
+#scoreboard {
+  text-align: center; }
+  #scoreboard h3 {
+    display: inline;
+    margin: 2px 10px; }
+
+.loading {
+  text-align: center; }
+
+.flipCardCorrect {
+  transform: rotateY(180deg);
+  background: #000 url("../images/successKid.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 30%; }
+
+.flipCardIncorrect {
+  transform: rotateY(180deg);
+  background: #000 url("../images/grumpycat.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 30%; }
+
+.front, .back {
+  backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   max-width: 800px;
-  height: 400px;
+  min-height: 450px;
+  padding: 50px;
+  border-radius: 5px; }
+
+.front {
+  z-index: 2;
+  background: #6A2E35; }
+
+.back {
+  transform: rotateY(180deg); }
+
+.flash-card {
+  transition: all 1s ease-in-out;
+  width: 100%;
+  max-width: 800px;
+  min-height: 450px;
   margin: 0 auto;
   margin-top: 40px;
   border: 1px solid black;
   font-family: Helvetica;
-  padding: 50px; }
+  position: relative;
+  transform-style: preserve-3d;
+  position: relative;
+  border-radius: 5px; }
   .flash-card h1 {
     font-size: 40px;
     text-align: center;
     margin-bottom: 40px;
     color: #E1AA7D;
     font-family: Consolas,monaco,monospace; }
+  .flash-card h3 {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    color: #2E2836; }
   .flash-card .flash-card-answers {
     width: 100%;
     margin: 0 auto;
@@ -44,6 +105,7 @@ body {
     display: flex;
     justify-content: center;
     flex-direction: column;
+    border-radius: 5px;
     background: #BE8A60;
     min-height: 200px;
     text-align: center;

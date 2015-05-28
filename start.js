@@ -1,8 +1,12 @@
-// Grabbing our server from our server/index.js file.
+var mongoose = require('mongoose');
+
+mongoose.connect('mongodb://localhost/flash-cards');
+
 var server = require('./server');
 
-var PORT = 1337;
-
-server.listen(PORT, function () {
-    console.log('Server started on port ' + PORT.toString());
+mongoose.connection.once('open', function () {
+    server.listen(1337, function () {
+        console.log('Server started on port 1337');
+    });
 });
+
